@@ -1,0 +1,360 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+body {
+    background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top:0; bottom:0; right:0; left:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+ul,ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #FF432E;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+/**** Start Logo Section ****/
+
+#logo-section {
+    
+}
+
+.logo h1 {
+    font-family: 'Lobster', cursive;
+    color: #fff;
+    font-size: 50px;
+}
+
+.logo span {
+    color: #999;
+}
+
+
+
+/**** Start Background Color ****/
+
+.blue {
+    background-color: rgba(40,171,227,0.6);
+}
+
+.green {
+    background-color: rgba(114,191,72,0.6);
+}
+
+.red {
+    background-color: rgba(255,67,46,0.6);
+}
+
+.olive {
+    background-color: rgba(128,128,0,0.6);
+}
+
+.purple {
+    background-color: rgba(128,0,128,0.6);
+}
+.fuchsia {
+    background-color: rgba(255,0,255,0.6);
+}
+.navy {
+    background-color: rgba(0,0,128,0.6);
+}
+.bisque {
+    background-color: rgba(255,228,196,0.6);
+}
+.gold {
+    background-color: rgba(255,215,0,0.6);
+}
+.skyblue {
+    background-color: rgba(135,206,235,0.6);
+}
+.lavender {
+    background-color: rgba(230,230,250,0.6);
+}
+.coral {
+    background-color: rgba(251,127,80,0.6);
+}
+
+
+/**** Start Main Body Section ****/
+.mainbody-section {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.menu-item {
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border-radius: 0.5em;
+	
+}
+
+.menu-item a {
+    color: #fff;
+    display: block;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.menu-item a p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.menu-item a i {
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.menu-item:hover a {
+    text-decoration: none;
+    color: #333;
+	animation: tada;
+	-webkit-animation: tada;
+	animation-duration: 1000ms;
+	-webkit-animation-duration: 1000ms;
+}
+
+@media only screen 
+and (min-width : 600px) 
+and (max-width : 991px) {
+    
+    .menu-item {
+        display: inline-block;
+        width: 32.8%;
+    }
+    
+    .menu-item.responsive {
+        width: 49.5%;
+        float: left;
+        margin-right: 3px;
+    }
+    
+    .menu-item.responsive-2 {
+        width: 49.5%;
+        float: right;
+    }
+    
+}
+
+@media only screen 
+and (min-width : 992px) 
+and (max-width : 1199px) {
+    
+    .menu-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .menu-item a i {
+        font-size: 32px;
+    }
+    
+    .menu-item a p {
+        font-size: 16px;
+    }
+    
+}
+
+/**** Start Modal Section ****/
+
+.modal-content {
+	overflow:visible !important;
+}
+.child-modal .modal-content {
+	padding: 10px 0 !important;
+	margin-top: 20px !important;
+	margin-right: 20px !important;
+	margin-left: 20px !important;
+	margin-bottom: 20px !important;
+	min-height: auto !important;
+    font-weight: 200;
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+}
+
+.modal-footer {
+	padding: 1px !important;
+}	
+
+table#table-01 {
+    width:100%;
+	border-radius: 10 !important;
+	border-spacing: 5px !important;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	border-spacing: 5px !important;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#table-01 tr:nth-child(even) {
+    background-color: rgba(238, 238, 238,0.6);
+}
+table#table-01 tr:nth-child(odd) {
+   background-color: rgba(255,255,255,0.6);
+}
+table#table-01 th {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+}
+.card-columns {
+
+ @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+ @include media-breakpoint-only(sm) {
+    column-count: 3;
+ }
+	@include media-breakpoint-only(xs) {
+    column-count: 3;	
+}
+}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+.center-element {
+width: 100%;
+margin: 0px auto 0px auto;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../images/loading.gif') 50% 50% no-repeat rgb(0,0,0);
+    opacity: .8;
+}
+
+/**** Efek kedap kedip ****/
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+/*
+@media print {
+  *,
+  *:before,enter code here
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  select {
+    background: #fff !important;
+  }
+  .navbar {
+    display: none;
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+*/

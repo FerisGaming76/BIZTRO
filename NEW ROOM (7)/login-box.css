@@ -1,0 +1,85 @@
+#login-box {
+	width:330px;
+	height: 350px;
+	margin-top: 8%;
+	padding: 0px 0px 0px 0px;
+	color: #ebebeb;
+	font: 12px Arial, Helvetica, sans-serif;
+	background: url(img/beckround.jpg) no-repeat center;
+	background-size: 330px 350px;
+}
+
+#login-box img {
+	border:2px;
+}
+
+#login-box h2 {
+	padding:0;
+	margin:0;
+	color: #ebebeb;
+	font: bold 44px "Calibri", Arial;
+}
+
+
+#login-box-name {
+	float: right;
+	display:inline;
+	width:40px;
+	text-align: right;
+	padding: 10px 5px 0 0;
+	margin:0 0 2px 0;
+}
+
+#login-box-field {
+	float: left;
+	display:inline;
+	width:220px;
+	margin:0 0 2px 0;
+}
+
+
+.form-login  {
+	width: 180px;
+	padding: 3px 10px 2px 10px;
+	border: 1px solid #b4b4b4;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	box-shadow: 0.2em 0.5em 0.5em -.3em rgba(0,0,0,0.35);
+	background: rgba(255,255,255, 0.7);
+	font-size: 22px;
+	color: #000000;
+}
+
+.form-login2  {
+	width: 25px;
+	height: 25px;
+	border-radius: 50px;
+	border: 1px solid #b4b4b4;
+	box-shadow: 0.2em 0.5em 0.5em -.3em rgba(0,0,0,0.35);
+	background: rgba(255,255,255, 0.7);
+}
+
+.form-login3  {
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+	box-shadow: 0.2em 0.5em 0.5em -.3em rgba(0,0,0,0.35);
+	background: rgba(0,0,0, 0.4);
+}
+
+.form-login4  {
+	border-radius: 10px;
+	box-shadow: 0.2em 0.5em 0.5em -.3em rgba(0,0,0,0.35);
+	background: rgba(0,0,0, 0.4);
+}
+
+.login-box-options  {
+	clear:both;
+	padding-left:87px;
+	font-size: 11px;
+}
+
+.login-box-options a {
+	color: #ebebeb;
+	font-size: 11px;
+}

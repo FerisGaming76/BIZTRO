@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Login Wifi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="-1"/>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link href="login-box.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+ $(if chap-id)<br/>
+<form name="sendin" action="$(link-login-only)" method="post">
+	<input type="hidden" name="username"/>
+	<input type="hidden" name="password"/>
+	<input type="hidden" name="dst" value="$(link-orig)"/>
+	<input type="hidden" name="popup" value="true"/>
+</form>
+<script type="text/javascript" src="/md5.js"></script>
+<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+ $(endif)
+<div align="center" valign="middle">
+	<div id="login-box" style="border: rgba(0,0,0, 0.4); border-radius: 10px;">
+		<br/>
+		<div style="background:rgba(0,0,0, 0.4); width:100% ;height:auto; text-align:center;"><img src="/img/login.png"/></div>
+		<br/>
+		<table border="0"><tr><td rowspan="6">
+		    <a href="https://minitik.net/tools/qrscanner/index.php?sz=100"><img src="/img/QrCode.png" class="form-login3"/></a><br/><br/>
+		    <a href="/harga.html"><img src="/img/harga.png" class="form-login3"/></a><br/><br/>
+		    <a href="/contact.html"><img src="/img/contact.png" class="form-login3"/></a><br/><br/>
+		    <a href="/about.html"><img src="/img/about.png" class="form-login3"/></a><br/><br/>
+		</td></tr><tr><td colspan="2">
+		    <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onsubmit="return doLogin()" $(endif)>
+		       <input type="hidden" name="dst" value="$(link-orig)"/>
+		       <input type="hidden" name="popup" value="true"/>
+		       <center>
+			  $(if error)
+			    <div style="color: #FF8080; font-size: 12px"><b>$(error)</b></div>
+			   $(else)
+			    <a href="/harga.html"><img src="/img/harga.gif"/></a>
+			   $(endif)
+		        </center>
+		</td></tr><tr><td>
+		       <div id="login-box-name">
+			<img class="form-login2" src="/img/username.png"/>
+		       </div>
+		</td><td>
+		       <div id="login-box-field">
+			<input name="username" class="form-login" title="Username" value="$(username)"/>
+		       </div>
+		</td></tr><tr><td>
+		        <div id="login-box-name">
+			<img class="form-login2" src="/img/password.png"/>
+		        </div>
+		</td><td>
+		        <div id="login-box-field">
+			<input name="password" class="form-login" title="Password" value=""/>
+		        </div>
+		</td></tr><tr><td  colspan="2"><br/>
+		         <center><input type="image" src="/img/login-btn.png" width="120px" height="27px"/></center>
+		</form>
+		<br/>
+		</td></tr><tr><td colspan="2"  class="form-login4">
+			<center>BIZTRO SALATIGA<br/>
+				Jl. Bima No.3, RW.8, Dukuh, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50722<br/>
+			Informasi lebih lanjut cek <a href="/contact.html">sini</a></center>
+		</td>
+		</tr></table>
+	</div>
+
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>

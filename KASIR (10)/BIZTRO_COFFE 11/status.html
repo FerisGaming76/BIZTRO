@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Status Wifi</title>
+$(if refresh-timeout)<meta http-equiv="refresh" content="$(refresh-timeout-secs)">$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link href="login-box.css" rel="stylesheet" type="text/css"/>
+
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+<script language="JavaScript">
+function readablizeBytes(bytes) {
+var s = ['bytes', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb'];
+var e = Math.floor(Math.log(bytes)/Math.log(1024));
+return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+}
+</script>
+</head>
+
+<body>
+<br>
+<div align="center" valign="middle">
+<div id="login-box" style="border: rgba(0,0,0, 0.4); border-radius: 10px;">
+<br/>
+<table style="background:rgba(0,0,0, 0.4); width:100% ;height:auto; text-align:center;"><tr><td>
+<img src="/img/login2.png"/>
+</td><td>
+  $(if login-by == 'trial')
+     <img src="/img/signal.gif" style="margin-top:-5px;"/><h2 style="margin-top:-15px;">Trial Login</h2>
+  $(else)
+    $(if login-by-mac != 'yes')
+      <img src="/img/signal.gif" style="margin-top:-5px;"/><h2 style="margin-top:-15px;">$(username)</h2>
+    $(else)
+      $(if limit-bytes-total != '')
+        <img src="/img/signal.gif" style="margin-top:-5px;"/><h2 style="margin-top:-15px;"><script language="JavaScript">document.write(readablizeBytes($(limit-bytes-total)));</script></h2>
+      $(else)
+        $(if session-time-left)
+          <img src="/img/signal.gif" style="margin-top:-5px;"/><h2 style="margin-top:-15px;"><script>document.write("$(session-time-left)".substr(0,("$(session-time-left)".search("d"))));</script> Hari<h2>
+        $(else)
+          <img src="/img/signal.gif" style="margin-top:-5px;"/><h2 style="margin-top:-15px;">Unlimited<h2>
+        $(endif)
+      $(endif)
+    $(endif)
+  $(endif)
+</td></tr></table>
+<br/>
+		<table border="0"><tr><td rowspan="10">
+		    <a href="https://minitik.net/tools/qrscanner/index.php?sz=100"><img src="/img/QrCode.png" class="form-login3"/></a><br/><br/>
+		    <a href="/harga.html"><img src="/img/harga.png" class="form-login3"/></a><br/><br/>
+		    <a href="/contact.html"><img src="/img/contact.png" class="form-login3"/></a><br/><br/>
+		    <a href="/about.html"><img src="/img/about.png" class="form-login3"/></a><br/><br/>
+		</td></tr><tr><td colspan="3">
+		       <center><a href="/harga.html"><img src="/img/harga.gif"></a></center>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4">
+			<b>IPaddress:</b>
+		</td><td width="160px" style="font-size:15px;" class="form-login4">
+			<b>$(ip)</b>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4">
+			<b>Online:</b>
+		</td><td width="160px" style="font-size:15px;" class="form-login4">
+			<b><script>document.write(("$(uptime)".substr(0,("$(uptime)".search("m"))).replace('h','Jam ')).replace('d','Hari '));</script> Menit</b>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4">
+			<b>Upload:</b>
+		</td><td width="160px" style="font-size:15px;" class="form-login4">
+			<b><script language="JavaScript">document.write(readablizeBytes($(bytes-in)));</script></b>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4">
+			<b>Download:</b>
+		</td><td width="160px" style="font-size:15px;" class="form-login4">
+			<b><script language="JavaScript">document.write(readablizeBytes($(bytes-out)));</script></b>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4">
+			<b>Total:</b>
+		</td><td width="160px" style="font-size:15px;" class="form-login4">
+			<b><script language="JavaScript">document.write(readablizeBytes($(bytes-total)));</script></b>
+		</td></tr><tr><td width="20px">
+		</td><td width="80px" style="font-size:15px;" class="form-login4" colspan="3">
+			<center><a href="/logout"><img src="/img/logout-btn.png" width="120px" height="27px"/></a></center>
+		</td></tr><tr><td></td></tr><tr><td colspan="3" class="form-login4">
+		$(if blocked == 'yes')
+            <center><div style="color: #FF8080">INTERNET DI PUTUS..!</div><br>
+			Jika ingin melanjutkan klick link ini dulu
+            <a href="$(link-advert)" target="hotspot_advert">LANJUT</a></center>
+  		$(elif refresh-timeout)
+			<center>Internet MURAH dan UNLIMITED<br/>
+			Banyak pilihan paket wifi yang menantimu!<br/>
+			Informasi lebih lanjut cek <a href="/contact.html">sini</a></center>
+		$(endif)
+		</td>
+		</tr></table>
+
+$(if login-by-mac != 'yes')
+  <br>
+<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+<!-- end of user manager link -->
+$(endif)
+</div>
+</div>
+</body>
+</html>

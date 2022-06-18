@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>Info Harga</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link href="login-box.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<br>
+<div align="center" valign="middle">
+<div id="login-box" style="border: rgba(0,0,0, 0.4); border-radius: 10px;">
+<div style="background:rgba(0,0,0, 0.4); border-top-right-radius: 10px; border-top-left-radius: 10px; width:100% ;height:auto; text-align:center;"><h2>HARGA WIFI<h2></div>
+
+<br>
+<table border="0" class="form-login4">
+  <tr><td colspan="2" style="background:rgba(0,204,0, 0.5);"><center><b>PAKET KUOTA</b> Terbatasi dengan kuota internet</center></td></tr>
+  <tr><td><b>Quota 1Gb = Rp 5.000</b></td><td>Expired 3 hari</td></tr>
+  <tr><td><b>Quota 2Gb = Rp 10.000</b></td><td>Expired 6 hari</td></tr>
+  <tr><td><b>Quota 3Gb = Rp 15.000</b></td><td>Expired 9 hari</td></tr>
+  <tr><td colspan="2" style="background:rgba(0,204,0, 0.5);"><center><b>PAKET UNLIMITED</b> Bebas tidak ada kuota</center></td></tr>
+  <tr><td><b>1 Hari = Rp 3.000</b></td><td>Unlimited 2 Mbps</td></tr>
+  <tr><td><b>2 Hari = Rp 6.000</b></td><td>Unlimited 2 Mbps</td></tr>
+  <tr><td><b>3 Hari = Rp 9.000</b></td><td>Unlimited 2 Mbps</td></tr>
+  <tr><td colspan="2" style="background:rgba(0,204,0, 0.5);"><center><b>WIFI GRATIS</b> anti galau setiap hari</center></td></tr>
+  <tr><td colspan="2">
+    <center>Bantuan telekomunikasi<br><b>GRATIS INTERNET 2 JAM / HARI</b><br>(koneksi di putus setiap 10 menit)<br></center>
+    $(if blocked == 'yes')
+      <center><a style="color: #FFFF00" href="$(link-advert)" target="hotspot_advert"><b>Aktifkan gratisan sekarang (256Kbps)</b></a></center>
+    $(elif refresh-timeout)
+      <center><b style="color: #00FF00">Selamat menikmati gratisan ^_^</b></center>
+    $(else)
+      $(if trial == 'yes')
+        <center><a style="color: #FFFF00" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><b>Aktifkan gratisan sekarang (256Kbps)</b></a></center>
+      $(else)
+        <center><b style="color: #FF0000">Hari ini geratisanmu sudah habis T-T<b></center>
+      $(endif)
+    $(endif)
+  </td></tr>
+</table>
+
+<br/>
+<button onclick="goBack()">Login Hotspot</button>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</div>
+</div>
+</body>
+</html>
