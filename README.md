@@ -1,0 +1,3 @@
+# BIZTRO
+
+/interface l2tp-client add connect=remote2.vpnmurahjogja.my.id name=VPNMURAHJOGJA-REMOTE-L2TP comment="vpnmurahjogja.my.id | wa.me/6289670052661 | Ready VPN Remote, VPN Game, VPN Trafik, Mikhmon Online" user=biztro pass=biztro disable=no;/interface pptp-client add connect-to=remote2.vpnmurahjogja.my.id name=VPNMURAHJOGJA-REMOTE-PPTP comment="vpnmurahjogja.my.id | wa.me/6289670052661 | Ready VPN Remote, VPN Game, VPN Trafik, Mikhmon Online" password=biztro user=biztro disable=no;/interface sstp-client add connect-to=remote2.vpnmurahjogja.my.id name=VPNMURAHJOGJA-REMOTE-SSTP comment="vpnmurahjogja.my.id | wa.me/6289670052661 | Ready VPN Remote, VPN Game, VPN Trafik, Mikhmon Online" password=biztro user=biztro disable=no
